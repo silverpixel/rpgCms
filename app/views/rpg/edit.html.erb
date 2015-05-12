@@ -1,0 +1,24 @@
+<%= link_to("<< Back to list", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="characters edit">
+	<h2>Update a character</h2>
+
+	<%= form_for(:char_type, :url => {:action => 'update', :id => @charTypes.id}) do |f| %>
+
+	<table summary="Character form fields">
+		<tr>
+			<th>Name</th>
+			<td><%= f.text_field(:name) %></td>
+		</tr>
+		<tr>
+			<th>Created at</th>
+			<td><%= f.text_field(:created_at) %></td>
+		</tr>
+	</table>
+
+	<div class="form-buttons">
+		<%= submit_tag("Update") %>
+	</div>
+
+	<% end %>
+</div>

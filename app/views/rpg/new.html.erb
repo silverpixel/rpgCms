@@ -1,0 +1,20 @@
+<%= link_to("<< Back to list", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="characters new">
+	<h2>Create a new character</h2>
+
+	<%= form_for(:char_type, :url => {:action => 'create'}) do |f| %>
+
+	<table summary="Character form fields">
+		<tr>
+			<th>Name</th>
+			<td><%= f.text_field(:name) %></td>
+		</tr>
+	</table>
+
+	<div class="form-buttons">
+		<%= submit_tag("Create") %>
+	</div>
+
+	<% end %>
+</div>

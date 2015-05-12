@@ -13,8 +13,10 @@
     		<td><%= ct.name %></td>
     		<td class="actions">
     			<%= link_to("Show", {:action => 'show', :id => ct.id}, :class => 'action show') %>
-    			<%= link_to("Edit", {:action => 'edit', :id => ct.id}, :class => 'action edit') %>
-    			<%= link_to("Delete", {:action => 'delete', :id => ct.id}, :class => 'action delete') %>
+               <!-- <% if ct.user == current_user %> -->
+        		  <%= link_to("Edit", {:action => 'edit', :id => ct.id}, :class => 'action edit') %>
+                  <%= link_to("Delete", {:action => 'delete', :id => ct.	id}, :class => 'action delete') %>
+              <!--  <% end %> -->
     		</td>
     	</tr>
     	<% end %>

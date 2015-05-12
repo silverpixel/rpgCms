@@ -1,7 +1,11 @@
 class RpgController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
-  	@charTypes = CharType.all
+    # Listing of all characters
+    #@charTypes = CharType.all
+    user = current_user.id
+  	@charTypes = CharType.where("user_id = '#{user}'")
   end
 
   def show
@@ -9,11 +13,11 @@ class RpgController < ApplicationController
   end
 
   def new
-  	@charTypes = CharType.new
+  	@charTypes = current_user.char_types.build
   end
 
   def create
-  	@charTypes = CharType.new(char_params)
+  	@charTypes = current_user.char_types.build(char_params)
   	if @charTypes.save
   		redirect_to(:action => 'index')
   	else

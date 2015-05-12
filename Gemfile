@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 1.2'
 # Use Devise for user authentification
 gem 'devise', '~> 3.4.1'
 
+# Use Kaminari for pagination
+gem 'kaminari', '~> 0.16.3'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

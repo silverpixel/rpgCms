@@ -5,7 +5,7 @@ class RpgController < ApplicationController
     # Listing of all characters
     #@charTypes = CharType.all
     user = current_user.id
-  	@charTypes = CharType.where("user_id = '#{user}'")
+  	@charTypes = CharType.where("user_id = '#{user}'").page(params[:page]).per(5)
   end
 
   def show

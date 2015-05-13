@@ -4,21 +4,26 @@
 	<h2>Create a new character</h2>
 
 	<%= form_for(:char_type, :url => {:action => 'create'}) do |f| %>
+	<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"></div>
+  <!-- Table -->
+  <table class="table">
+    <tr class="header">
+		<th>Name</th>
+		<td><%= f.text_field(:name) %></td>
+	</tr>
+	<tr>
+		<th>Avatar</th>
+		<td><%= f.file_field :avatar %></td>
+	</tr>
+</table>
 
-	<table summary="Character form fields">
-		<tr>
-			<th>Name</th>
-			<td><%= f.text_field(:name) %></td>
-		</tr>
-		<tr>
-			<th>Avatar</th>
-			<td><%= f.file_field :avatar %></td>
-		</tr>
-	</table>
-
-	<div class="form-buttons">
-		<%= submit_tag("Create") %>
-	</div>
-
-	<% end %>
+  </table>
 </div>
+
+<div class="form-buttons">
+	<%= submit_tag("Create") %>
+
+</div>
+<% end %>

@@ -1,27 +1,33 @@
 <div class="characters">
   <h2>Characters</h2>
 
-    <%= link_to("Add New Character", {:action => 'new'}, :class => 'action new') %>
+    <%= link_to("Add New Character", {:action => 'new'}, :class => 'action new') %></br>
     
     <%= paginate @charTypes %>
 
-    <table class="listing" summary="Character list">
-    	<tr class="header">
-    		<th>&nbsp;</th>
-    		<th>Character</th>
-    		<th>Actions</th>
-    	</tr>
-    	<% @charTypes.each do |ct| %>
-    	<tr>
-    		<td><%= ct.name %></td>
-    		<td class="actions">
-    			<%= link_to("Show", {:action => 'show', :id => ct.id}, :class => 'action show') %>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><%= @current_user.id %> created characters</div>
+
+  <!-- Table -->
+  <table class="table">
+    <tr class="header">
+            <th>Character</th>
+            <th>Avatar</th>
+            <th>Actions</th>
+        </tr>
+        <% @charTypes.each do |ct| %>
+        <tr>
+            <td><%= ct.name %></td>
+            <td><%= ct.avatar %></td>
+            <td class="actions">
+                <%= link_to("Show", {:action => 'show', :id => ct.id}, :class => 'action show') %>
                <!-- <% if ct.user == current_user %> -->
-        		  <%= link_to("Edit", {:action => 'edit', :id => ct.id}, :class => 'action edit') %>
-                  <%= link_to("Delete", {:action => 'delete', :id => ct.	id}, :class => 'action delete') %>
+                  <%= link_to("Edit", {:action => 'edit', :id => ct.id}, :class => 'action edit') %>
+                  <%= link_to("Delete", {:action => 'delete', :id => ct.    id}, :class => 'action delete') %>
               <!--  <% end %> -->
-    		</td>
-    	</tr>
-    	<% end %>
-    </table>
+            </td>
+        </tr>
+        <% end %>
+  </table>
 </div>

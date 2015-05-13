@@ -36,6 +36,11 @@ gem 'kaminari', '~> 0.16.3'
 # Use Carrierwave for uploading pictures
 gem 'carrierwave', '~> 0.10.0'
 
+# Bootstrap
+gem 'bootstrap-sass', '~> 3.3.4.1'
+
+#gem 'bootstrap-sass-rails', '~> 3.1.0.0'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

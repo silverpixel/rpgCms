@@ -4,25 +4,29 @@
 	<h2>Update a character</h2>
 
 	<%= form_for(:char_type, :url => {:action => 'update', :id => @charTypes.id}) do |f| %>
-
-	<table summary="Character form fields">
-		<tr>
-			<th>Name</th>
-			<td><%= f.text_field(:name) %></td>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"></div>
+  <!-- Table -->
+  <table class="table">
+    <tr class="header">
+		<th>Name</th>
+			<td><%= f.text_field :name, :value => @charTypes.name %></td>
 		</tr>
 		<tr>
 			<th>Created at</th>
-			<td><%= f.text_field(:created_at) %></td>
+			<td><%= f.text_field :created_at, :value => @charTypes.created_at %></td>
 		</tr>
 		<tr>
 			<th>Avatar</th>
 			<td><%= f.file_field :avatar %></td>
 		</tr>
-	</table>
+<% end %>
+  </table>
+</div>
 
-	<div class="form-buttons">
+<div class="form-buttons">
 		<%= submit_tag("Update") %>
-	</div>
+</div>
 
-	<% end %>
 </div>

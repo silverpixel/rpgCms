@@ -33,6 +33,9 @@ gem 'devise', '~> 3.4.1'
 # Use Kaminari for pagination
 gem 'kaminari', '~> 0.16.3'
 
+# Use Carrierwave for uploading pictures
+gem 'carrierwave', '~> 0.10.0'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

@@ -16,5 +16,9 @@
 			<th>Updated</th>
 			<td><%= @charTypes.updated_at %></td>
 		</tr>
+		<tr>
+			<th>Avatar</th>
+			<td><%= image_tag @charTypes.avatar.url if @charTypes.avatar? %></td>
+		</tr>
 	</table>
 </div>

@@ -51,6 +51,6 @@ class RpgController < ApplicationController
   private
 
   def char_params
-  	params.require(:char_type).permit(:name)
+  	params.require(:char_type).permit(:name, :avatar)
   end
 end
